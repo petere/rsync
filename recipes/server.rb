@@ -27,6 +27,8 @@ when 'rhel'
     group  'root'
     mode   '0755'
   end
+
+  execute "/sbin/chkconfig --add rsyncd"
 when 'debian'
   template '/etc/default/rsync' do
     source 'rsync-defaults.erb'
